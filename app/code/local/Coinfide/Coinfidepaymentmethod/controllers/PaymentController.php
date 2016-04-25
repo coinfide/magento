@@ -134,11 +134,11 @@ class Coinfide_Coinfidepaymentmethod_PaymentController extends Mage_Core_Control
 			$_product = $obj->load ( $productId );
 			$itemDescription = $_product->getShortDescription ();
 
-			//$itemName = $sItem->getName();
-			$itemName = "";
+			$itemName = $sItem->getName();
+			//$itemName = "";
 			
-			$itemName .= $_product->getAttributeText('manufacturer');
-			$itemName .= ' ' . $_product->getName();
+			//$itemName .= $_product->getAttributeText('manufacturer');
+			//$itemName .= ' ' . $_product->getName();
 			// end custom
 			
 			if (isset ( $tax_info [0] ['percent'] )) {
