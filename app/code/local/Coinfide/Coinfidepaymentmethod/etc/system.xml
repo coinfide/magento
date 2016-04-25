@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<config>    
+  <sections>
+    <payment>
+      <groups>
+        <coinfidepaymentmethod translate="label" module="coinfidepaymentmethod">
+          <label>Coinfide Payment Module</label>
+          <sort_order>1000</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <active translate="label">
+              <label>Enabled</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>10</sort_order>
+            </active>
+            <title translate="label">
+              <label>Title</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <sort_order>20</sort_order>
+            </title>
+            <description translate="label">
+              <label>Description</label>
+              <frontend_type>textarea</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <sort_order>30</sort_order>
+			</description>
+            <allowspecific translate="label">
+              <label>Payment from Applicable Countries</label>
+              <frontend_type>allowspecific</frontend_type>
+              <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <sort_order>40</sort_order>
+            </allowspecific>
+            <specificcountry translate="label">
+              <label>Payment from Specific Countries</label>
+              <frontend_type>multiselect</frontend_type>
+              <source_model>adminhtml/system_config_source_country</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <sort_order>50</sort_order>
+            </specificcountry>
+            <username translate="label">
+              <label>API Username</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>60</sort_order>
+              <validate>required-entry</validate>
+            </username>
+            <password translate="label">
+              <label>API Password</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>70</sort_order>
+              <validate>required-entry</validate>
+            </password>
+            <secret translate="label">
+              <label>API Signature</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>80</sort_order>
+              <validate>required-entry</validate>
+            </secret>
+            <testmode translate="label">
+              <label>Test mode?</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>90</sort_order>
+            </testmode>
+            <testurl translate="label">
+              <label>Test API URL</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>100</sort_order>
+              <validate>required-entry</validate>
+            </testurl>
+            <produrl translate="label">
+              <label>Prod API URL</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>110</sort_order>
+              <validate>required-entry</validate>
+            </produrl>
+            
+            <integration_type translate="label">
+              <label>Integration Type</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/integrations</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>120</sort_order>
+            </integration_type>
+            <iframeurl translate="label">
+              <label>Redirect URL for iFrame Based Integration</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>130</sort_order>
+              <depends><integration_type>1</integration_type></depends>
+            </iframeurl>
+            <iframeurltransfer translate="label">
+              <label>Parameter for iFrame URL Transfer</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>140</sort_order>
+              <depends><integration_type>1</integration_type></depends>
+            </iframeurltransfer>
+            
+            
+            <phonecode translate="label">
+              <label>Default Phone Country Code</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>150</sort_order>
+              <validate>required-entry validate-number</validate>
+            </phonecode>
+            <merchantphonecode translate="label">
+              <label>Merchant Phone Country Code</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>160</sort_order>
+              <validate>required-entry validate-number</validate>
+            </merchantphonecode>
+            <merchantphone translate="label">
+              <label>Merchant Phone Number</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>170</sort_order>
+              <validate>required-entry validate-number</validate>
+            </merchantphone>
+            <merchantemail translate="label">
+              <label>Merchant Email</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>175</sort_order>
+              <validate>required-entry validate-email</validate>
+            </merchantemail>
+			
+            <invoicedays translate="label">
+              <label>Order Due Date (+days)</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>180</sort_order>
+              <validate>required-entry validate-number</validate>
+			</invoicedays>
+            
+            <order_status translate="label">
+              <label>New Order Status</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsNew</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default: Coinfide Waiting for Payment</comment>
+              <sort_order>190</sort_order>
+            </order_status>
+            <heading_order_status translate="label">
+              <label>Order Status Mapping (Coinfide Status / Magento Status)</label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+              <sort_order>200</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+            </heading_order_status>
+            <order_status_se translate="label">
+              <label>Sent (SE)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsNew</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default: Coinfide Waiting for Payment</comment>
+              <sort_order>210</sort_order>
+            </order_status_se>
+            
+            <order_status_ca translate="label">
+              <label>Cancelled (CA)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsCanceled</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default: Coinfide Canceled</comment>
+              <sort_order>220</sort_order>
+            </order_status_ca>
+            
+            <order_status_pa translate="label">
+              <label>Paid (PA)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsProcessing</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default: Coinfide Paid</comment>
+              <sort_order>230</sort_order>
+            </order_status_pa>
+            
+            <order_status_rf translate="label">
+              <label>Refunded (RF)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsCanceled</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default: Coinfide Refunded</comment>
+              <sort_order>240</sort_order>
+            </order_status_rf>
+            
+            <order_status_mp translate="label">
+              <label>Mark as Paid (MP)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsProcessing</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Paid</comment>
+              <sort_order>250</sort_order>
+            </order_status_mp>
+            
+            <order_status_mr translate="label">
+              <label>Marked as Refunded (MR)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsCanceled</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Refunded</comment>
+              <sort_order>260</sort_order>
+            </order_status_mr>
+            
+            <order_status_cf translate="label">
+              <label>Chargebacked (CF)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsCanceled</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Chargebacked</comment>
+              <sort_order>270</sort_order>
+            </order_status_cf>
+            
+            <order_status_ex translate="label">
+              <label>Expired (EX)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsCanceled</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Expired</comment>
+              <sort_order>280</sort_order>
+            </order_status_ex>
+            
+            <order_status_rp translate="label">
+              <label>Partially Refunded (RP)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsProcessing</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Partial Refund</comment>
+              <sort_order>290</sort_order>
+            </order_status_rp>
+            
+            <order_status_cp translate="label">
+              <label>Partially Chargebacked (CP)</label>
+              <frontend_type>select</frontend_type>
+              <source_model>coinfidepaymentmethod/optionsProcessing</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment>Default Coinfide Partial Chargeback</comment>
+              <sort_order>300</sort_order>
+            </order_status_cp>
+            
+          </fields>
+        </coinfidepaymentmethod>
+      </groups>
+    </payment>
+  </sections>
+</config>

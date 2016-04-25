@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Coinfide_Coinfidepaymentmethod>
+      <active>true</active>
+      <codePool>local</codePool>
+       
+      <depends>
+        <Mage_Payment />
+      </depends>
+    </Coinfide_Coinfidepaymentmethod>
+  </modules>
+</config>
