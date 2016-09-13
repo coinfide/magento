@@ -293,9 +293,16 @@ class Coinfide_Coinfidepaymentmethod_PaymentController extends Mage_Core_Control
 					$redirect_iframe = Mage::getStoreConfig ( 'payment/coinfidepaymentmethod/iframeurl' );
 					$param_name = Mage::getStoreConfig ( 'payment/coinfidepaymentmethod/iframeurltransfer' );
 					
-					echo "<form action='{$redirect_iframe}' method='post' name='frm'>";
+					$redirect_url = htmlentities( $redirect_url );
 					
-					echo "<input type='hidden' name='" . $param_name . "' value='" . htmlentities ( $redirect_url ) . "?t=iframe&language=" . $locale . "'>";
+					$redirect_url = (strpos($redirect_url, '?') === false ? '?' : '&') . 't=iframe';
+		
+					if (strpos($redirect_url, 'language=') === false) {
+						$redirect_url .= '&language=' . $locale;
+					}
+		
+					echo "<form action='{$redirect_iframe}' method='post' name='frm'>";
+					echo "<input type='hidden' name='" . $param_name . "' value='" . $redirect_url . "'>";
 					
 					echo "</form>";
 					echo "<script language=\"JavaScript\">";
